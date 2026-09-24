@@ -1,0 +1,30 @@
+name: Bug
+description: Meld een reproduceerbare fout
+title: "[Bug] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Probleem
+      description: Wat gebeurt er?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Verwacht gedrag
+      description: Wat had er moeten gebeuren?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduceren
+      description: Welke stappen reproduceren het probleem?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptatiecriteria
+      description: Wanneer is dit aantoonbaar opgelost?
