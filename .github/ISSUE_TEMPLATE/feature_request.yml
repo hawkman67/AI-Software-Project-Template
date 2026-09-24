@@ -1,0 +1,30 @@
+name: Feature
+description: Nieuwe functionaliteit of gedragswijziging
+title: "[Feature] "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Doel
+      description: Welk gebruikers- of productprobleem lossen we op?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Wat hoort expliciet wel en niet bij dit issue?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptatiecriteria
+      description: Concrete controleerbare criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Mogelijke impact
+      description: Denk aan database, architectuur, data, security, integraties en backward compatibility.
