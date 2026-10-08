@@ -2,28 +2,38 @@
 
 Issue: #
 
-Samenvatting en expliciete uitsluitingen:
+Samenvatting:
+
+Expliciete non-goals:
+
+## Source-of-truth en impact
+
+- Canonieke eigenaar van gewijzigde domeinfeiten:
+- Geraakte ketens/lagen:
+- Database-/migratie-effect: geen / toelichting
+- Backward compatibility:
+- Security/privacy:
+- Externe provider/reference-data-impact:
 
 ## Acceptatie
 
 - [ ] Alle behaalde acceptatiecriteria zijn in het issue afgevinkt.
 - [ ] De wijziging blijft binnen scope.
+- [ ] Geen onbedoelde tweede source-of-truth geïntroduceerd.
 - [ ] Geen onbedoelde data-, schema-, versie- of architectuurwijziging.
-
-## Risico en data
-
-- Geraakte ketens:
-- Database-/migratie-effect: geen / toelichting
-- Impactanalyse en regressiegebieden:
 
 ## Validatie
 
 - Profiel:
 - Uitgevoerde controles en resultaten:
-- Niet uitgevoerde controles en reden:
+- Gerichte regressietest(s):
+- Niet uitgevoerde zware controles en reden:
 
 ## Oplevering
 
 - [ ] Volledige diff geïnspecteerd.
 - [ ] `git diff --check` geslaagd.
+- [ ] Roadmap/documentatie bijgewerkt indien de bronrol geraakt is.
 - [ ] Indien nodig staat `needs-user-test` op het issue.
+- [ ] PR is pas review-ready gemaakt na lokale validatie.
+- [ ] Aparte ChatGPT-review / `gptapproved` blijft onafhankelijk van Codex.

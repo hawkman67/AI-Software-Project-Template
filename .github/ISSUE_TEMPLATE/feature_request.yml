@@ -9,22 +9,51 @@ body:
       description: Welk gebruikers- of productprobleem lossen we op?
     validations:
       required: true
+
   - type: textarea
     id: scope
     attributes:
-      label: Scope
+      label: Scope en non-goals
       description: Wat hoort expliciet wel en niet bij dit issue?
     validations:
       required: true
+
+  - type: textarea
+    id: semantics
+    attributes:
+      label: Product- en domeinsemantiek
+      description: Welke betekenis/regels moeten expliciet vaststaan voordat implementatie begint?
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source-of-truth
+      description: Wat is de canonieke eigenaar van nieuwe of gewijzigde domeinfeiten? Welke state is alleen derived/cache/scenario?
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impactanalyse
+      description: Denk aan database, migraties, bestaande data, architectuurlagen, security/privacy, integraties, performance, backward compatibility en release.
+    validations:
+      required: true
+
   - type: textarea
     id: acceptance
     attributes:
       label: Acceptatiecriteria
-      description: Concrete controleerbare criteria.
+      description: Concrete controleerbare criteria, inclusief fout-/grensgevallen waar relevant.
     validations:
       required: true
+
   - type: textarea
-    id: impact
+    id: validation
     attributes:
-      label: Mogelijke impact
-      description: Denk aan database, architectuur, data, security, integraties en backward compatibility.
+      label: Validatie
+      description: Welke gerichte tests/fixtures/volumechecks bewijzen dat dit werkt en geen regressie veroorzaakt?
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies en opvolgers
+      description: Blockers, parent/child issues, ADR's of latere werkzaamheden.

@@ -9,6 +9,7 @@ body:
       description: Wat gebeurt er?
     validations:
       required: true
+
   - type: textarea
     id: expected
     attributes:
@@ -16,15 +17,37 @@ body:
       description: Wat had er moeten gebeuren?
     validations:
       required: true
+
   - type: textarea
     id: reproduce
     attributes:
       label: Reproduceren
-      description: Welke stappen reproduceren het probleem?
+      description: Welke stappen/data reproduceren het probleem?
     validations:
       required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Bewijs en observaties
+      description: Screenshots, logs, expected/actual waarden of andere aanwijzingen. Geen secrets of gevoelige data.
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Mogelijke impact
+      description: Welke flows, data, schema's, gebruikers of compatibiliteit kunnen geraakt zijn?
+
   - type: textarea
     id: acceptance
     attributes:
       label: Acceptatiecriteria
       description: Wanneer is dit aantoonbaar opgelost?
+    validations:
+      required: true
+
+  - type: textarea
+    id: regression
+    attributes:
+      label: Regressietest
+      description: Welke test moet vóór de fix falen en na de fix slagen, en bij welke centrale eigenaar hoort die test?
