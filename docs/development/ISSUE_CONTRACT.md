@@ -69,3 +69,15 @@ Bij reviewbevindingen blijft dezelfde branch/PR in gebruik totdat de bevindingen
 - Gebruik `needs-user-test` wanneer het project dat label hanteert.
 - Sluit parent-issues pas wanneer alle relevante children gereed zijn.
 - Voeg nooit zelf een gebruikersgoedkeurings- of reviewgoedkeuringslabel toe.
+
+## Proportionele voorbereiding en AI-review
+
+**ChatGPT heeft zelf toegang tot de repository.** Bij het opstellen/reviewen van issues inspecteert de reviewer eerst rechtstreeks de relevante actuele code, callers en bestaande tests. Schuif dit niet standaard af op Codex; vraag alleen gericht technisch onderzoek als de code onvoldoende uitsluitsel geeft.
+
+- **Klein/lokaal** (bijvoorbeeld een label, conditie of enkele regels): kort probleem, exacte locatie indien bekend, gewenste uitkomst en passende gerichte controle volstaan. Geen aparte scout, vooronderzoekissue, ADR, uitgebreid implementatiecontract of verplichte brede testmatrix.
+- **Middel** (meerdere direct betrokken callers of gekoppeld gedrag): controleer relevante codepaden en tests vooraf, benoem randgevallen en grenzen, en test geraakte consumers.
+- **Hoog risico** (data-/schemamigratie, gedeelde rekenregels, security, publieke contracten, onomkeerbaar effect): expliciete afhankelijkheden, aannames, concrete verwachte uitkomsten, rollback en passende regressiegates vóór implementatie.
+
+De classificatie volgt **feitelijke impact, niet het aantal gewijzigde regels**. Een éénregelige wijziging in financiële kernlogica kan hoog risico zijn; een eenvoudige UI-tekstcorrectie blijft licht. Geen automatische tweede analyse-/reviewronde zonder concrete bevinding. Stop uitsluitend bij een materiële onopgeloste keuze; gewone technische details worden binnen het issue opgelost.
+
+Bij review onderscheidt ChatGPT **issuefout, implementatiefout, ontbrekende test en nieuwe productkeuze**; nieuwe wensen zijn niet achteraf als tekortkoming van Codex te presenteren. Recidiverende bevindingen leiden waar zinvol tot een gerichte regressietest of beknopte templateverbetering, niet tot extra proces voor alle issues.
