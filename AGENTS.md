@@ -151,3 +151,9 @@ Bij `Pak issue #N op`:
 - Werk context- of decision-files alleen bij wanneer issue, wijziging of gebruiker dit vereist.
 - `docs/ROADMAP.md` is het levende bouwdraaiboek wanneer het project die gebruikt; roadmaprelevante wijzigingen worden in dezelfde issuebranch bijgewerkt.
 - Houd `docs/CHAT_HANDOFF.md` compact en alleen voor actuele overdraagbare context, niet als tweede roadmap of changelog.
+
+## Proportioneel werken — niet over-engineeren
+
+Voor kleine, lokaal begrensde wijzigingen: direct relevant codepad controleren, minimaal oplossen, gerichte validatie en een compacte PR. Geen apart onderzoeksissue, scout-run, ADR of uitgebreide rapportage zonder aantoonbaar risico. Bij risicovolle wijzigingen wel expliciete impactanalyse volgens de bestaande regels. Een wijziging van één regel is op zichzelf geen reden voor een zwaar proces, maar ook geen vrijstelling van controle op risicovolle semantiek.
+
+De aparte ChatGPT-reviewer kan GitHub-code rechtstreeks inspecteren en hoort dat bij issuevoorbereiding zelfstandig te doen. Codex levert relevante technische bevindingen wanneer implementatie onverwachte afhankelijkheden toont, maar herhaalt niet routinematig het hele vooronderzoek. Nieuwe productvragen en nieuwe scope eerst expliciet scheiden van bugs tegen de oorspronkelijke acceptatiecriteria.
