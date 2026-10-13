@@ -1,5 +1,17 @@
 # Codex router
 
+## Git-preflight vóór nieuwe issuebranch of releasebatch
+
+Voer vóór **nieuw** issue- of releasebatchwerk een korte, read-only preflight uit:
+1. Controleer huidige branch en `git status --porcelain`. Gooi geen wijzigingen weg; bij oncommitted werk dat switchen verhindert: stop en vraag hoe dit moet worden afgehandeld. Geen automatische stash/reset/force.
+2. Controleer open GitHub-PR's en branches op **hetzelfde issue, dezelfde releasebatch of overlappende wijzigingen**. Bestaat al een bijbehorende PR, werk daarop verder; maak geen duplicaat. Bij een mogelijke botsing of onduidelijk eigenaarschap: vraag eerst bevestiging. Niet-gerelateerde open PR's blokkeren nieuw werk niet.
+3. Voor een daadwerkelijk **nieuwe** branch: `git fetch origin`, `git switch main`, `git pull --ff-only origin main`; controleer dat lokale main gelijkloopt met origin/main. Maak de nieuwe issue-/releasebranch uitsluitend vanaf die actuele main. Geen merge/rebase van andermans werk zonder aanleiding.
+4. Voor **vervolgwerk aan een bestaande PR**: blijf op de bijbehorende branch, haal remote wijzigingen op en controleer of main inmiddels is doorgelopen. Integreer main gecontroleerd waar nodig zonder ongevraagde history rewrite.
+5. Controleer vóór PR-oplevering opnieuw of de branch actueel is ten opzichte van origin/main en of er een bestaande PR is. Meld materiële conflictsituaties; push nooit direct naar main.
+
+Voer dit compact uit zonder routinematige voortgangsberichten; vraag alleen bij werkelijke blokkade of materiële overlap.
+
+
 Lees altijd `docs/development/DEVELOPMENT_GUIDELINES.md`. Dit is de korte conditionele router naar de verplichte projectregels.
 
 - GitHub Issue of oplevering: volg het Issuecontract.
